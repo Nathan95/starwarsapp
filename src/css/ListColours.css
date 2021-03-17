@@ -1,0 +1,39 @@
+.itemContainer:nth-child(1) {
+  box-shadow: 1px 2px 15px 2px green;
+}
+
+.itemContainer:nth-child(2) {
+  box-shadow: 1px 2px 15px 2px red;
+}
+
+.itemContainer:nth-child(3) {
+  box-shadow: 1px 2px 15px 2px purple;
+}
+
+.itemContainer:nth-child(4) {
+  box-shadow: 1px 2px 15px 2px orange;
+}
+
+.itemContainer:nth-child(5) {
+  box-shadow: 1px 2px 15px 2px indigo;
+}
+
+.itemContainer:nth-child(6) {
+  box-shadow: 1px 2px 15px 2px blue;
+}
+
+.itemContainer:nth-child(7) {
+  box-shadow: 1px 2px 15px 2px yellow;
+}
+
+.itemContainer:nth-child(8) {
+  box-shadow: 1px 2px 15px 2px magenta;
+}
+
+.itemContainer:nth-child(9) {
+  box-shadow: 1px 2px 15px 2px yellowgreen;
+}
+
+.itemContainer:nth-child(10) {
+  box-shadow: 1px 2px 15px 2px cyan;
+}

@@ -1,0 +1,10 @@
+body {
+  background: url('images/stars.webp');
+}
+.App {
+  text-align: center;
+}
+
+.wrapper {
+  padding: 2rem;
+}
