@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import {fetchHomeWorld, fetchFirstFilmAppearance} from '../utils/utils';
 import image from '../starwars-pics/noimage.png';
-
 import '../css/Page.css';
 import '../css/ListColours.css';
 
@@ -26,13 +25,12 @@ const Page = () => {
   //call data on page load
   useEffect(() => {
     fetchData();
-  }, [])
+  }, [data])
 
   // scroll to top on page click
   const scrollRef = () => {
     containerRef.current.scrollIntoView({ behavior: "smooth"});
   }
-  console.log(data, "data")
 
   const Pagination = () => {
     const pageNumbers = [1, 2, 3, 4, 5]
