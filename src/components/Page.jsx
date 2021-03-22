@@ -1,31 +1,28 @@
 import React, {useState, useEffect, useRef} from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
 import {fetchHomeWorld, fetchFirstFilmAppearance} from '../utils/utils';
 import image from '../starwars-pics/noimage.png';
 import '../css/Page.css';
 import '../css/ListColours.css';
+import { fetchData } from '../api/fetcher';
+import queryString from 'query-string';
+
 
 const Page = () => {
-  const [data, setData] = useState([]); 
+  const [response, setResponse] = useState([]); 
   const containerRef = useRef(null);
 
-  const fetchData = async (num = 1) => {
-    try {
-      const res = await axios.get(
-        `https://swapi.dev/api/people/?page=${num}`
-      );
-      setData(res?.data.results);
-      
-    } catch (error) {
-      console.log(error);
-    }
-  }
-
+  const url = queryString.parse(window.location.search);
+  
   //call data on page load
-  useEffect(() => {
-    fetchData();
-  }, [data])
+    useEffect(() => {
+      if(url.page != 1) {
+        fetchData(url.page, setResponse);
+      } else {
+        fetchData(1, setResponse);
+      }
+    }, [])
+
 
   // scroll to top on page click
   const scrollRef = () => {
@@ -40,7 +37,7 @@ const Page = () => {
           id={number}
           className="pagination"
           onClick={() => {
-            fetchData(number)
+            fetchData(number, setResponse)
             scrollRef();
           }}
         > 
@@ -51,10 +48,10 @@ const Page = () => {
   }
 
   const mapData = () => {
-    if(data && data.length > 0) {
+    if(response && response.length > 0) {
        return (
          <div>
-          {data.map(item => (
+          {response.map(item => (
             <div className="itemContainer" key={item.name}>
               <div className="image"><img src={image} alt=""/></div>
               <div className="content">
