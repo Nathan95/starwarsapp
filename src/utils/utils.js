@@ -106,3 +106,7 @@ export const fetchFirstFilmAppearance = firstFilm => {
       return <span>"N/A"</span>;
   }
 }
+
+export const scrollRef = ref => {
+    ref.current.scrollIntoView({ behavior: "smooth"});
+}
