@@ -1,6 +1,6 @@
 import React, {useState, useEffect, useRef} from 'react';
 import {fetchHomeWorld, fetchFirstFilmAppearance, scrollRef} from '../utils/utils';
-import image from '../starwars-pics/noimage.png';
+import image from '../starwars-pics/download.png';
 import '../css/Page.css';
 import '../css/ListColours.css';
 import { fetchData } from '../api/fetcher';
